@@ -1,4 +1,4 @@
-# Andres Sessions
+# Andres presentations
 
 This repository hosts slides and demos from sessions I did at conferences and user groups.
 
