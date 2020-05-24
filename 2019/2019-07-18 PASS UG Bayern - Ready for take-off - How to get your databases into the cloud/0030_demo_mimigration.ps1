@@ -1,4 +1,10 @@
 ###############################################################################
+#                              Andre Essing
+# -----------------------------------------------------------------------------
+## Developer.......: Andre Essing (https://github.com/aessing)
+#                                (https://twitter.com/aessing)
+#                                (https://www.linkedin.com/in/aessing/)
+## -----------------------------------------------------------------------------
 #	File:		0030_demo_mimigration.ps1
 #
 #	Summary:    This script creates the migration porject in DMS
@@ -13,16 +19,13 @@
 # ----------------------------------------------------------------------------
 #	Written by Andre Essing, Microsoft Deutschland GmbH
 #
-#   This script is intended only as a supplement to demos and lectures
-#   given by Andre Essing.
-#
-#   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-#   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-#   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-#   IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-#   OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-#   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-#   OTHER DEALINGS IN THE SOFTWARE.
+#	This script is intended only as a supplement to demos and lectures
+#	given by Andre Essing.  
+# 
+#	THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF 
+#	ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED 
+#	TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+#	PARTICULAR PURPOSE.
 ###############################################################################
 
 
@@ -34,22 +37,22 @@ install-module Az.DataMigration -Force -AllowClobber
 ###############################################################################
 
 # DEFINE SOME VARIABLES
-$subscriptionName = '###SUBSCRIPTION_NAME###'
+$subscriptionName = 'SUBSCRIPTION'
 $region = 'northeurope'
-$rgName = '###RESOURCEGROUP_NAME###'
-$vNetName = '###VIRTUALNETWORK_NAME###'
-$subnetName = '###SUBNET_NAME###'
-$dmsName = '###DATAMIGRATIONSERVICE_NAME###'
+$rgName = 'user-demo-dms-rg'
+$vNetName = 'user-demo-dms-vnet01'
+$subnetName = 'DMSSubnet'
+$dmsName = 'user-demo-dms-dms01'
 $dmsSKU = 'Premium_4vCores'
-$projectName = '###MIGRATIONPROJECT_NAME###'
-$sourceServer = '###SOURCE_NAME-IP###'
-$sourceAuth = 'SqlAuthentication'
-$targetServer = '###TARGET-RESOURCEID_NAME###'
-$dbname = '###DATABASE_NAME###'
-$backupFileSharePath='###FILESHARE_UNC###'
-$storageResourceId = '###STORAGEACCOUNT_RESOURCEID###'
-$appId = '###APPLICATION_ID###'
-$appIdPwd = '###APPLICATION_ID_SECRET###'
+$projectName = "SQLMIMigration01"
+$sourceServer = "172.16.6.4"
+$sourceAuth = "SqlAuthentication"
+$targetServer = "/subscriptions/f6c0b928-7078-4332-a106-e7a9c5253249/resourceGroups/user-demo-sqlmi-rg/providers/Microsoft.Sql/managedInstances/user-demo-sqlmi-sql01"
+$dbname = "AdventureWorks2017"
+$backupFileSharePath="\\172.16.6.4\Migration"
+$storageResourceId = "/subscriptions/f6c0b928-7078-4332-a106-e7a9c5253249/resourceGroups/user-demo-dms-rg/providers/Microsoft.Storage/storageAccounts/userdemodmssto01"
+$appId = "a7503a73-66dd-4b01-8e2f-4dabb01f92c8"
+$appIdPwd = "jGSIMQyKczgk[W22LLmVcwuzt@01LP.+"
 
 # LOGIN TO AZURE
 Login-AzAccount

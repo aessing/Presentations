@@ -1,4 +1,11 @@
 /*============================================================================
+###############################################################################
+                             Andre Essing
+-----------------------------------------------------------------------------
+Developer.......: Andre Essing (https://github.com/aessing)
+                               (https://twitter.com/aessing)
+                               (https://www.linkedin.com/in/aessing/)
+-----------------------------------------------------------------------------
 	File:		0031_demo_mimigration.sql
 
 	Summary:    This script does the backups to demonstrate SQL Managed
@@ -17,44 +24,41 @@
 	This script is intended only as a supplement to demos and lectures
 	given by Andre Essing.  
   
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-	EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-	IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-	OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-	ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-	OTHER DEALINGS IN THE SOFTWARE.
+	THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF 
+	ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED 
+	TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+	PARTICULAR PURPOSE.
 ============================================================================*/
 
 -- ----------------------------------------------------------------------------
 -- CREATE INITIAL DATABASE BACKUP
 -- ----------------------------------------------------------------------------
-BACKUP DATABASE [###DATRBASE_NAME###]
-TO DISK = 'F:\Migration\###DATRBASE_NAME###-FULL.bak'
+BACKUP DATABASE [AdventureWorks2017]
+TO DISK = 'F:\Migration\AdventureWorks2017-FULL.bak'
 WITH CHECKSUM;
 
 
 -- ----------------------------------------------------------------------------
 -- CREATE TRANSACTION LOG BACKUP
 -- ----------------------------------------------------------------------------
-BACKUP Log [###DATRBASE_NAME###]
-TO DISK = 'F:\Migration\###DATRBASE_NAME###-TLOG-01.trn'
+BACKUP Log [AdventureWorks2017]
+TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-01.trn'
 WITH CHECKSUM;
 
-BACKUP Log [###DATRBASE_NAME###]
-TO DISK = 'F:\Migration\###DATRBASE_NAME###-TLOG-02.trn'
+BACKUP Log [AdventureWorks2017]
+TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-02.trn'
 WITH CHECKSUM;
 
-BACKUP Log [###DATRBASE_NAME###]
-TO DISK = 'F:\Migration\###DATRBASE_NAME###-TLOG-03.trn'
+BACKUP Log [AdventureWorks2017]
+TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-03.trn'
 WITH CHECKSUM;
 
 
 -- ----------------------------------------------------------------------------
--- CREATE TAILLOG BACKUP (LAST TLOG BACKUP BEFORE CUTOVER)
+-- CREATE TAILLOG BACKUP
 -- ----------------------------------------------------------------------------
-BACKUP Log [###DATRBASE_NAME###]
-TO DISK = 'F:\Migration\###DATRBASE_NAME###-TLOG-Tail.trn'
+BACKUP Log [AdventureWorks2017]
+TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-Tail.trn'
 WITH CHECKSUM;
 
 
