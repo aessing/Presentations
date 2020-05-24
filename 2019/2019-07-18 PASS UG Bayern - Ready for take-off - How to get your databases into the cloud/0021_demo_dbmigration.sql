@@ -5,10 +5,9 @@ Developer.......: Andre Essing (https://github.com/aessing)
                                (https://twitter.com/aessing)
                                (https://www.linkedin.com/in/aessing/)
 -----------------------------------------------------------------------------
-	File:		0031_demo_mimigration.sql
+	File:		0021_demo_dbmigration.sql
 
-	Summary:    This script does the backups to demonstrate SQL Managed
-                Instance online migration
+	Summary:    This script does the has a look at the SQL DB migration
 
 				THIS SCRIPT IS PART OF THE TRACK: Ready for take-off
 				                                  How to get your databases
@@ -29,36 +28,17 @@ Developer.......: Andre Essing (https://github.com/aessing)
 	PARTICULAR PURPOSE.
 ============================================================================*/
 
--- ----------------------------------------------------------------------------
--- CREATE INITIAL DATABASE BACKUP
--- ----------------------------------------------------------------------------
-BACKUP DATABASE [AdventureWorks2017]
-TO DISK = 'F:\Migration\AdventureWorks2017-FULL.bak'
-WITH CHECKSUM;
+SELECT * FROM [Northwind].[dbo].[Categories]
 
+INSERT INTO [dbo].[Categories] ([CategoryName],[Description])
+VALUES ('SQLDEMO', 'An awesome demo')
 
--- ----------------------------------------------------------------------------
--- CREATE TRANSACTION LOG BACKUP
--- ----------------------------------------------------------------------------
-BACKUP Log [AdventureWorks2017]
-TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-01.trn'
-WITH CHECKSUM;
+SELECT * FROM [Northwind].[dbo].[Categories]
 
-BACKUP Log [AdventureWorks2017]
-TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-02.trn'
-WITH CHECKSUM;
+DELETE FROM  [dbo].[Categories]
+WHERE [CategoryName] = 'SQLDEMO'
 
-BACKUP Log [AdventureWorks2017]
-TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-03.trn'
-WITH CHECKSUM;
-
-
--- ----------------------------------------------------------------------------
--- CREATE TAILLOG BACKUP
--- ----------------------------------------------------------------------------
-BACKUP Log [AdventureWorks2017]
-TO DISK = 'F:\Migration\AdventureWorks2017-TLOG-Tail.trn'
-WITH CHECKSUM;
+SELECT * FROM [Northwind].[dbo].[Categories]
 
 
 -- ============================================================================
