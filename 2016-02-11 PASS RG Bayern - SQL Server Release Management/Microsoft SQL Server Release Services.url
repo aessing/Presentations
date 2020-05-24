@@ -1,0 +1,17 @@
+[DEFAULT]
+BASEURL=http://blogs.msdn.com/b/sqlreleaseservices/
+[InternetShortcut]
+IDList=
+Roamed=-1
+URL=http://blogs.msdn.com/b/sqlreleaseservices/
+IconFile=http://blogs.msdn.com/themes/wireframe/favicon.ico
+IconIndex=1
+[Xmarks]
+nid=O.X351
+ntype=bookmark
+[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,2
+[Search]
+VisitCount=05
+SelectionCount=05
+DateVisited=2015/11/02:12:12:26.553
