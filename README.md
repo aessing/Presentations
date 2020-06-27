@@ -7,6 +7,7 @@ The content of this repository is intended only as a supplement to my presentati
 ## Social Profiles
 
 If you have a question, or you just want to contact me, you can find and follow me on:
+ - [Website](https://www.andre-essing.de)
  - [GitHub](https://github.com/aessing)
  - [LinkedIn](https://www.linkedin.com/in/aessing/)
  - [Twitter](https://twitter.com/aessing)
