@@ -1,8 +1,7 @@
-![Repository Banner](docs/images/banner.jpg)
+![Andres Presentations & Demos Banner](docs/images/banner.jpg)
 
 Data, Cloud, [Azure](https://azure.microsoft.com/) & [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) Enthusiast, Community Addict and Cloud Solution Architect @ [Microsoft](https://www.microsoft.com/)
 
-# Andres Presentations & Demos
 In my spare time I am speaking at user groups and at international conferences, teaching about cloud data services and how to use them in the best possible manner. Also, I am working on different small community and open-source projects.
 
 This repository hosts slides and demos from presentations I did at conferences, user groups, meetups, and webcasts.
